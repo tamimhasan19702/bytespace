@@ -181,7 +181,7 @@
     @apply bg-background text-foreground font-body;
   }
   html {
-    @apply font-body;
+    @apply font-body scroll-smooth;
   }
   h1,
   h2,
