@@ -81,6 +81,37 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* custom colors for bytespace */
+  /* Persian Blue */
+  --color-persian-blue-100: var(--persian-blue-100);
+  --color-persian-blue-200: var(--persian-blue-200);
+  --color-persian-blue-300: var(--persian-blue-300);
+  --color-persian-blue-400: var(--persian-blue-400);
+  --color-persian-blue-500: var(--persian-blue-500);
+  --color-persian-blue-600: var(--persian-blue-600);
+  --color-persian-blue-700: var(--persian-blue-700);
+  --color-persian-blue-800: var(--persian-blue-800);
+
+  /* Electric Lime */
+  --color-electric-lime-100: var(--electric-lime-100);
+  --color-electric-lime-200: var(--electric-lime-200);
+  --color-electric-lime-300: var(--electric-lime-300);
+  --color-electric-lime-400: var(--electric-lime-400);
+  --color-electric-lime-500: var(--electric-lime-500);
+  --color-electric-lime-600: var(--electric-lime-600);
+  --color-electric-lime-700: var(--electric-lime-700);
+  --color-electric-lime-800: var(--electric-lime-800);
+
+  /* White (opacity scale) */
+  --color-white-100: var(--white-100);
+  --color-white-200: var(--white-200);
+  --color-white-300: var(--white-300);
+  --color-white-400: var(--white-400);
+  --color-white-500: var(--white-500);
+  --color-white-600: var(--white-600);
+  --color-white-700: var(--white-700);
+  --color-white-800: var(--white-800);
 }
 
 .dark {
@@ -115,6 +146,41 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* custom variables for bytespace */
+  /* Fonts */
+  --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+
+  /* Persian Blue scale */
+  --persian-blue-100: #e6ecff;
+  --persian-blue-200: #b3c7ff;
+  --persian-blue-300: #80a2ff;
+  --persian-blue-400: #4d7cff;
+  --persian-blue-500: #1a57ff;
+  --persian-blue-600: #0044ff;
+  --persian-blue-700: #0040f0;
+  --persian-blue-800: #003be2;
+
+  /* Electric Lime scale */
+  --electric-lime-100: #f8fedc;
+  --electric-lime-200: #eefeaa;
+  --electric-lime-300: #e1fc69;
+  --electric-lime-400: #d4fb20;
+  --electric-lime-500: #bde604;
+  --electric-lime-600: #9cbe03;
+  --electric-lime-700: #7b9603;
+  --electric-lime-800: #5a6e02;
+
+  /* White opacity scale */
+  --white-100: rgba(255, 255, 255, 0.1);
+  --white-200: rgba(255, 255, 255, 0.2);
+  --white-300: rgba(255, 255, 255, 0.3);
+  --white-400: rgba(255, 255, 255, 0.4);
+  --white-500: rgba(255, 255, 255, 0.55);
+  --white-600: rgba(255, 255, 255, 0.7);
+  --white-700: rgba(255, 255, 255, 0.85);
+  --white-800: rgba(255, 255, 255, 1);
 }
 
 @layer base {
