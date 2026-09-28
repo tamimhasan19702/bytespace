@@ -64,6 +64,14 @@
   --color-white-600: var(--white-600);
   --color-white-700: var(--white-700);
   --color-white-800: var(--white-800);
+  --shuttle-gray-100: var(--shuttle-gray-100);
+  --shuttle-gray-200: var(--shuttle-gray-200);
+  --shuttle-gray-300: var(--shuttle-gray-300);
+  --shuttle-gray-400: var(--shuttle-gray-400);
+  --shuttle-gray-500: var(--shuttle-gray-500);
+  --shuttle-gray-600: var(--shuttle-gray-600);
+  --shuttle-gray-700: var(--shuttle-gray-700);
+  --shuttle-gray-800: var(--shuttle-gray-800);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -137,6 +145,16 @@
   --white-600: rgba(255, 255, 255, 0.7);
   --white-700: rgba(255, 255, 255, 0.85);
   --white-800: rgba(255, 255, 255, 1);
+
+  /* Shuttle Gray */
+  --shuttle-gray-100: #EDEEEE;
+  --shuttle-gray-200: #D3D3D4;
+  --shuttle-gray-300: #B5B5B6;
+  --shuttle-gray-400: #969698;
+  --shuttle-gray-500: #77787A;
+  --shuttle-gray-600: #59595C;
+  --shuttle-gray-700: #3E3F42;
+  --shuttle-gray-800: #242528;
 }
 
 .dark {
