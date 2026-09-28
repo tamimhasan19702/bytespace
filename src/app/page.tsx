@@ -1,69 +1,150 @@
-import Image from "next/image";
+"use client";
+
+import { gsap } from "@/lib/animations/gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
+const persianBlue = [
+  [100, "bg-persian-blue-100"],
+  [200, "bg-persian-blue-200"],
+  [300, "bg-persian-blue-300"],
+  [400, "bg-persian-blue-400"],
+  [500, "bg-persian-blue-500"],
+  [600, "bg-persian-blue-600"],
+  [700, "bg-persian-blue-700"],
+  [800, "bg-persian-blue-800"],
+] as const;
+const electricLime = [
+  [100, "bg-electric-lime-100"],
+  [200, "bg-electric-lime-200"],
+  [300, "bg-electric-lime-300"],
+  [400, "bg-electric-lime-400"],
+  [500, "bg-electric-lime-500"],
+  [600, "bg-electric-lime-600"],
+  [700, "bg-electric-lime-700"],
+  [800, "bg-electric-lime-800"],
+] as const;
+const white = [
+  [100, "bg-white-100"],
+  [200, "bg-white-200"],
+  [300, "bg-white-300"],
+  [400, "bg-white-400"],
+  [500, "bg-white-500"],
+  [600, "bg-white-600"],
+  [700, "bg-white-700"],
+  [800, "bg-white-800"],
+] as const;
 
 export default function Home() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      gsap.from(".reveal", {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: ref.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    },
+    { scope: ref },
+  );
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="container section-y space-y-20">
+      {/* FONT CHECK */}
+      <section>
+        <h2 className="text-2xl font-heading font-semibold mb-2">
+          Heading font — should render in Poppins
+        </h2>
+        <p className="font-body text-muted-foreground">
+          Paragraph font — should render in Satoshi. If this looks like a
+          generic system sans-serif, the font files are not loading correctly.
+        </p>
+      </section>
+
+      {/* COLOR CHECK — Persian Blue */}
+      <section>
+        <h3 className="font-heading font-semibold mb-4">Persian Blue scale</h3>
+        <div className="flex flex-wrap gap-3">
+          {persianBlue.map(([shade, colorClass]) => (
+            <div key={shade} className="flex flex-col items-center gap-1">
+              <div
+                className={`h-16 w-16 rounded-lg border border-border ${colorClass}`}
+              />
+              <span className="text-xs font-body text-muted-foreground">
+                {shade}
+              </span>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* COLOR CHECK — Electric Lime */}
+      <section>
+        <h3 className="font-heading font-semibold mb-4">Electric Lime scale</h3>
+        <div className="flex flex-wrap gap-3">
+          {electricLime.map(([shade, colorClass]) => (
+            <div key={shade} className="flex flex-col items-center gap-1">
+              <div
+                className={`h-16 w-16 rounded-lg border border-border ${colorClass}`}
+              />
+              <span className="text-xs font-body text-muted-foreground">
+                {shade}
+              </span>
+            </div>
+          ))}
         </div>
-      </main>
+      </section>
+
+      {/* COLOR CHECK — White opacity scale (on dark bg to be visible) */}
+      <section className="bg-persian-blue-800 rounded-2xl p-6">
+        <h3 className="font-heading font-semibold mb-4 text-white-800">
+          White opacity scale
+        </h3>
+        <div className="flex flex-wrap gap-3">
+          {white.map(([shade, colorClass]) => (
+            <div key={shade} className="flex flex-col items-center gap-1">
+              <div
+                className={`h-16 w-16 rounded-lg border border-white-300 ${colorClass}`}
+              />
+              <span className="text-xs font-body text-white-600">{shade}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTAINER CHECK */}
+      <section>
+        <h3 className="font-heading font-semibold mb-2">Container check</h3>
+        <p className="font-body text-sm text-muted-foreground">
+          This whole page is wrapped in <code>.container-page</code> — resize
+          the browser: padding should shrink smoothly on mobile and the content
+          should never exceed 1920px wide.
+        </p>
+      </section>
+
+      {/* GSAP SCROLL TRIGGER CHECK */}
+      <section ref={ref} className="space-y-4">
+        <h3 className="font-heading font-semibold">
+          Scroll down — these should fade + slide in
+        </h3>
+        <div className="reveal h-32 rounded-xl bg-persian-blue-600 flex items-center justify-center text-white-800 font-heading">
+          Reveal block 1
+        </div>
+        <div className="reveal h-32 rounded-xl bg-electric-lime-400 flex items-center justify-center font-heading">
+          Reveal block 2
+        </div>
+        <div className="reveal h-32 rounded-xl bg-persian-blue-300 flex items-center justify-center font-heading">
+          Reveal block 3
+        </div>
+      </section>
     </div>
   );
 }
