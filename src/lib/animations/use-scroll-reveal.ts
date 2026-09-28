@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "./gsap";
+import { gsap, useGSAP } from "./gsap";
 
 export function useScrollReveal<T extends HTMLElement>(
   options?: gsap.TweenVars,
