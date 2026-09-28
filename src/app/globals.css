@@ -197,3 +197,23 @@
     @apply font-heading;
   }
 }
+
+@layer utilities {
+  .container{
+    width: 100%;
+    max-width: 1920px;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 5vw, 6rem);
+  }
+
+  .section-y {
+    padding-block: clamp(3rem, 8vw, 7rem);
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
