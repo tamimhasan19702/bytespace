@@ -8,7 +8,7 @@ export const Elipse = ({ className }: { className?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <circle cx="574.5" cy="574.5" r="414.5" stroke="currentColor" stroke-width="320" />
+      <circle cx="574.5" cy="574.5" r="414.5" stroke="currentColor" strokeWidth="320" />
     </svg>
   );
 };
