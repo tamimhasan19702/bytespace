@@ -7,11 +7,11 @@ import { ItemTwo } from "./item-two";
 
 type OrnamentItemsProps = {
   className?: string;
-  variants: "item-one" | "item-two" | "item-three" | "item-four" | "item-five" | "item-six";
+  variant: "item-one" | "item-two" | "item-three" | "item-four" | "item-five" | "item-six";
 };
 
-export function OrnamentItems({ className, variants }: OrnamentItemsProps) {
-  switch (variants) {
+export function OrnamentItems({ className, variant }: OrnamentItemsProps) {
+  switch (variant) {
     case "item-one":
       return <ItemOne className={className} />;
     case "item-two":

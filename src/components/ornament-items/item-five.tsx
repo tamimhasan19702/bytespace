@@ -1,4 +1,8 @@
+import { useId } from "react";
+
 export const ItemFive = ({ className }: { className?: string }) => {
+  const uid = useId();
+
   return (
     <svg
       width="1em"
@@ -13,10 +17,10 @@ export const ItemFive = ({ className }: { className?: string }) => {
         width="175.814"
         height="175.814"
         transform="matrix(-1 0 0 1 176.628 0)"
-        fill="url(#pattern0_46_95)"
+        fill={`url(#${uid}pattern0_46_95)`}
       />
       <mask
-        id="mask0_46_95"
+        id={`${uid}mask0_46_95`}
         style={{ maskType: "alpha" }}
         maskUnits="userSpaceOnUse"
         x="0"
@@ -28,26 +32,26 @@ export const ItemFive = ({ className }: { className?: string }) => {
           width="175.814"
           height="175.814"
           transform="matrix(-1 0 0 1 176.628 0)"
-          fill="url(#pattern1_46_95)"
+          fill={`url(#${uid}pattern1_46_95)`}
         />
       </mask>
-      <g mask="url(#mask0_46_95)">
+      <g mask={`url(#${uid}mask0_46_95)`}>
         <rect
           width="2500"
           height="175.814"
           transform="matrix(-1 0 0 1 1357 0)"
-          fill="CurrentColor"
+          fill="currentColor"
         />
       </g>
       <defs>
-        <pattern id="pattern0_46_95" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlinkHref="#image0_46_95" transform="scale(0.0004)" />
+        <pattern id={`${uid}pattern0_46_95`} patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlinkHref={`#${uid}image0_46_95`} transform="scale(0.0004)" />
         </pattern>
-        <pattern id="pattern1_46_95" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlinkHref="#image0_46_95" transform="scale(0.0004)" />
+        <pattern id={`${uid}pattern1_46_95`} patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlinkHref={`#${uid}image0_46_95`} transform="scale(0.0004)" />
         </pattern>
         <image
-          id="image0_46_95"
+          id={`${uid}image0_46_95`}
           width="2500"
           height="2500"
           preserveAspectRatio="none"

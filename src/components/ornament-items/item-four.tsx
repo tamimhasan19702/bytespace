@@ -1,4 +1,8 @@
+import { useId } from "react";
+
 export const ItemFour = ({ className }: { className?: string }) => {
+  const uid = useId();
+
   return (
     <svg
       width="1em"
@@ -9,9 +13,9 @@ export const ItemFour = ({ className }: { className?: string }) => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       className={className}
     >
-      <path fill="url(#a)" d="M0 0h343.684v343.689H0z" />
+      <path fill={`url(#${uid}a)`} d="M0 0h343.684v343.689H0z" />
       <mask
-        id="c"
+        id={`${uid}c`}
         style={{ maskType: "alpha" }}
         maskUnits="userSpaceOnUse"
         x="0"
@@ -19,20 +23,20 @@ export const ItemFour = ({ className }: { className?: string }) => {
         width="344"
         height="344"
       >
-        <path fill="url(#b)" d="M0 0h343.684v343.689H0z" />
+        <path fill={`url(#${uid}b)`} d="M0 0h343.684v343.689H0z" />
       </mask>
-      <g mask="url(#c)">
-        <path fill="CurrentColor" d="M-1095.53 0h2500v343.689h-2500z" />
+      <g mask={`url(#${uid}c)`}>
+        <path fill="currentColor" d="M-1095.53 0h2500v343.689h-2500z" />
       </g>
       <defs>
-        <pattern id="a" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlinkHref="#d" transform="scale(.0004)" />
+        <pattern id={`${uid}a`} patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlinkHref={`#${uid}d`} transform="scale(.0004)" />
         </pattern>
-        <pattern id="b" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlinkHref="#d" transform="scale(.0004)" />
+        <pattern id={`${uid}b`} patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlinkHref={`#${uid}d`} transform="scale(.0004)" />
         </pattern>
         <image
-          id="d"
+          id={`${uid}d`}
           width="2500"
           height="2500"
           preserveAspectRatio="none"
