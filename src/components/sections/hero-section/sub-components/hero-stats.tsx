@@ -30,7 +30,7 @@ export function HeroStats({ className }: { className?: string }) {
     >
       {/* Desktop / tablet — floating around the hero image */}
       <div className="absolute inset-0 hidden md:block">
-        <div className="stat-reveal pointer-events-auto absolute left-[30%] top-[65%]">
+        <div className="stat-reveal pointer-events-auto absolute left-[28%] top-[65%]">
           <StatCard
             variant="highlight"
             title="UI/UX Design"
@@ -38,7 +38,7 @@ export function HeroStats({ className }: { className?: string }) {
           />
         </div>
 
-        <div className="stat-reveal pointer-events-auto absolute right-[34%] top-[70%]">
+        <div className="stat-reveal pointer-events-auto absolute right-[30%] top-[70%]">
           <StatCard variant="progress" title="Learning Progress" value={55} />
         </div>
 

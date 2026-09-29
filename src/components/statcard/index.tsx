@@ -7,15 +7,15 @@ import { StatCardProps } from "./interface";
 
 function ProgressCard({ title, value, className }: StatCardProps & { variant: "progress" }) {
   return (
-    <Card className={cn("p-0 w-50 rounded-lg bg-white text-start", className)}>
+    <Card className={cn("p-0 w-65 rounded-lg bg-white text-start", className)}>
       <CardContent className="p-4">
         <p className="font-body text-sm text-shuttle-gray-400">{title}</p>
         <p className="font-heading mt-1 text-3xl font-bold text-shuttle-gray-800">{value}%</p>
         <Progress
           value={value}
           className="mt-3"
-          trackClassName="h-2 bg-white"
-          indicatorClassName="bg-electric-lime-400"
+          trackClassName="h-1.5 bg-white"
+          indicatorClassName="bg-electric-lime-400 "
         />
       </CardContent>
     </Card>
@@ -24,7 +24,7 @@ function ProgressCard({ title, value, className }: StatCardProps & { variant: "p
 
 function HighlightCard({ title, subtitle, className }: StatCardProps & { variant: "highlight" }) {
   return (
-    <Card className={cn("p-0 rounded-lg bg-white text-start", className)}>
+    <Card className={cn("p-0 w-65 rounded-lg bg-white text-start", className)}>
       <CardContent className="p-4">
         <p className="font-heading text-lg font-semibold text-shuttle-gray-800">{title}</p>
         <p className="font-body mt-1 text-sm text-shuttle-gray-400">{subtitle}</p>
