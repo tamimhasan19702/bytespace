@@ -8,6 +8,8 @@ import { Elipse } from "./elipse";
 
 export function HeroOrnaments() {
   const scope = useRef<HTMLDivElement>(null);
+  const ellipse = useRef<HTMLDivElement>(null);
+  const heroImage = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -26,6 +28,22 @@ export function HeroOrnaments() {
         repeat: -1,
         yoyo: true,
         stagger: 0.3,
+      });
+
+      gsap.from(ellipse.current, {
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+
+      gsap.from(heroImage.current, {
+        y: 60,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.4,
       });
     },
     { scope },
@@ -89,10 +107,15 @@ export function HeroOrnaments() {
       </div>
 
       {/* Ellipse */}
-      <Elipse className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 text-[clamp(20rem,90vw,71.8125rem)] text-electric-lime-400" />
+      <div ref={ellipse} className="pointer-events-none absolute inset-0 z-10">
+        <Elipse className="absolute bottom-0 left-1/2 -translate-x-1/2 text-[clamp(20rem,90vw,71.8125rem)] text-electric-lime-400" />
+      </div>
 
       {/* Hero image */}
-      <div className="absolute bottom-0 left-1/2 z-20 w-full max-w-90 -translate-x-1/2 md:w-[50vw] md:max-w-150">
+      <div
+        ref={heroImage}
+        className="absolute bottom-0 left-1/2 z-20 w-full max-w-90 -translate-x-1/2 md:w-[50vw] md:max-w-150"
+      >
         <Image
           src="/images/male-hero.png"
           alt="Student wearing headphones holding a laptop"
