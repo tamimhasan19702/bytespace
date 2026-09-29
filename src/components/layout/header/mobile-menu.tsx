@@ -1,6 +1,7 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { IconStore } from "@/components/icons";
+import { X } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "../../logo";
 import { Button } from "../../ui/button";
@@ -15,13 +16,15 @@ import {
 import { navLinks } from "./links";
 
 export function MobileMenu() {
-
   return (
     <Drawer swipeDirection="right">
       <DrawerTrigger
         render={<Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu" />}
       >
-        <Menu className="h-5 w-5 text-shuttle-gray-50 transition-colors hover:text-persian-blue-200" />
+        <IconStore
+          iconName="hamburger-menu"
+          className="text-xl text-shuttle-gray-50 transition-colors hover:text-persian-blue-200"
+        />
       </DrawerTrigger>
 
       <DrawerContent className="h-full w-[80%] max-w-sm rounded-none">
@@ -55,22 +58,25 @@ export function MobileMenu() {
           <DrawerClose
             nativeButton={false}
             render={
-              <Button
-                variant="outline"
-                className="font-body h-11 w-full rounded-full border-persian-blue-800 text-persian-blue-800 hover:bg-persian-blue-100"
+              <Link
+                href="/login"
+                className="font-body flex h-11 w-full items-center justify-center rounded-full border border-shuttle-gray-800 font-bold text-base text-shuttle-gray-800 transition-colors hover:bg-persian-blue-100"
               />
             }
           >
-            <Link href="/login">Sign in</Link>
+            Sign in
           </DrawerClose>
 
           <DrawerClose
             nativeButton={false}
             render={
-              <Button className="font-body h-11 w-full rounded-full bg-electric-lime-400 text-persian-blue-800 hover:bg-electric-lime-500" />
+              <Link
+                href="/register"
+                className="font-body flex h-11 w-full items-center justify-center rounded-full bg-electric-lime-400 font-bold text-base text-shuttle-gray-900 transition-colors hover:bg-electric-lime-500"
+              />
             }
           >
-            <Link href="/register">Join us</Link>
+            Join us
           </DrawerClose>
         </div>
       </DrawerContent>

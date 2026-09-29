@@ -1,6 +1,6 @@
 "use client";
 
-import { ShoppingBag } from "lucide-react";
+import { IconStore } from "@/components/icons";
 import Link from "next/link";
 import { Logo } from "../../logo";
 import { navLinks } from "./links";
@@ -34,12 +34,15 @@ export function Header() {
           <Link className="hover:text-persian-blue-200" href="/register">
             Join us
           </Link>
-          <ShoppingBag className="h-4 w-4 cursor-pointer" />
+          <IconStore iconName="shopping-bag" className="text-lg cursor-pointer mt-1" />
         </div>
 
         {/* Mobile actions */}
-        <div className="flex items-center gap-4 md:hidden">
-          <ShoppingBag className="h-5 w-5 cursor-pointer text-shuttle-gray-50 transition-colors hover:text-persian-blue-200" />
+        <div className="flex items-center gap-4 text-shuttle-gray-50 md:hidden">
+          <IconStore
+            iconName="shopping-bag"
+            className="text-xl cursor-pointer transition-colors hover:text-persian-blue-200"
+          />
           <MobileMenu />
         </div>
       </div>
