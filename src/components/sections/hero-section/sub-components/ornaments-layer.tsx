@@ -92,7 +92,7 @@ export function HeroOrnaments() {
       <Elipse className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 text-[clamp(20rem,90vw,71.8125rem)] text-electric-lime-400" />
 
       {/* Hero image */}
-      <div className="absolute bottom-0 left-1/2 z-20 w-full max-w-120 -translate-x-1/2 md:w-[50vw] md:max-w-150">
+      <div className="absolute bottom-0 left-1/2 z-20 w-full max-w-90 -translate-x-1/2 md:w-[50vw] md:max-w-150">
         <Image
           src="/images/male-hero.png"
           alt="Student wearing headphones holding a laptop"
