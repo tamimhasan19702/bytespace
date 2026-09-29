@@ -11,7 +11,7 @@ export function Logo({ variant = "default" }: LogoProps) {
   return (
     <Link
       href="/"
-      className="flex items-center gap-2 font-heading text-xl font-bold text-persian-blue-800 lg:text-2xl"
+      className="flex items-center gap-2 font-heading text-xl font-bold text-persian-blue-800 md:text-2xl"
     >
       <Image
         src={isAlt ? "/images/bytespace-logo-alt.png" : "/images/bytespace-logo.png"}

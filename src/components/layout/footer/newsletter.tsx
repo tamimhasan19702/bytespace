@@ -1,14 +1,11 @@
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
 
 export const Newsletter = () => {
   return (
     <div className="max-w-md">
-      <Link href="/" className="flex items-center gap-2">
-        <Logo variant="alt" />
-      </Link>
+      <Logo variant="alt" />
 
       <p className="font-body mt-4 text-sm text-muted-foreground">
         Stay Up to date with our latest features and releases by joining our newsletter.

@@ -1,16 +1,17 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { IconStore } from "@/components/icons";
+import { X } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "../../logo";
 import { Button } from "../../ui/button";
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
 } from "../../ui/drawer";
 import { navLinks } from "./links";
 
@@ -18,9 +19,12 @@ export function MobileMenu() {
   return (
     <Drawer swipeDirection="right">
       <DrawerTrigger
-        render={<Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu" />}
+        render={<Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu" />}
       >
-        <Menu className="h-12 w-12 text-persian-blue-800" />
+        <IconStore
+          iconName="hamburger-menu"
+          className="text-xl text-shuttle-gray-50 transition-colors hover:text-persian-blue-200"
+        />
       </DrawerTrigger>
 
       <DrawerContent className="h-full w-[80%] max-w-sm rounded-none">
@@ -37,6 +41,7 @@ export function MobileMenu() {
           {navLinks.map((link) => (
             <DrawerClose
               key={link.href}
+              nativeButton={false}
               render={
                 <Link
                   href={link.href}
@@ -50,8 +55,29 @@ export function MobileMenu() {
         </nav>
 
         <div className="mt-auto flex flex-col gap-3 border-t border-border p-4">
-          <DrawerClose render={<Link href="/login">Login</Link>} />
-          <DrawerClose render={<Link href="/register">Register</Link>} />
+          <DrawerClose
+            nativeButton={false}
+            render={
+              <Link
+                href="/login"
+                className="font-body flex h-11 w-full items-center justify-center rounded-full border border-shuttle-gray-800 font-bold text-base text-shuttle-gray-800 transition-colors hover:bg-persian-blue-100"
+              />
+            }
+          >
+            Sign in
+          </DrawerClose>
+
+          <DrawerClose
+            nativeButton={false}
+            render={
+              <Link
+                href="/register"
+                className="font-body flex h-11 w-full items-center justify-center rounded-full bg-electric-lime-400 font-bold text-base text-shuttle-gray-900 transition-colors hover:bg-electric-lime-500"
+              />
+            }
+          >
+            Join us
+          </DrawerClose>
         </div>
       </DrawerContent>
     </Drawer>
