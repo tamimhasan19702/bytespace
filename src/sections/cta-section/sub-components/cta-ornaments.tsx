@@ -94,7 +94,7 @@ export function CTAOrnaments() {
         />
         <OrnamentItems
           variant="item-one"
-          className="absolute z-20 bottom-[20%] -right-[10%] text-[clamp(3.5rem,22vw,6rem)] text-shuttle-gray-100"
+          className="absolute z-20 bottom-[10%] -right-[5%] text-[clamp(3.5rem,22vw,6rem)] text-shuttle-gray-100"
         />
         {/* left */}
         <OrnamentItems

@@ -25,7 +25,7 @@ export function CourseGridList({ children }: { children: ReactNode }) {
   return (
     <ul
       ref={scope}
-      className="mt-15 lg:mt-25 mx-auto grid w-full max-w-300 grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
+      className="mt-15 lg:mt-25 mx-auto grid w-full grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
     >
       {children}
     </ul>

@@ -68,7 +68,7 @@ export function FeatureRow({
   return (
     <div
       ref={scope}
-      className="max-w-300 mx-auto grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16"
+      className="mx-auto grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16"
     >
       <div
         data-feature-image
