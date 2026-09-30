@@ -1,4 +1,4 @@
-import { Course, CourseAvatar } from "./interface";
+import { Course, CourseAvatar, CourseGridContent } from "./interface";
 
 const demoAvatars: CourseAvatar[] = [
   { src: "https://i.pravatar.cc/100?img=1", alt: "Student 1" },
@@ -99,10 +99,16 @@ export const courses: Course[] = [
   },
 ];
 
-export function getCourses(): Promise<Course[]> {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(courses), 2000);
-  });
+export async function getCourseGrid(): Promise<CourseGridContent> {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  return {
+    title: "Discover Your Passion, Build Your Skills",
+    description:
+      "At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life.",
+    categories,
+    courses,
+  };
 }
 
 export const categories: string[] = [

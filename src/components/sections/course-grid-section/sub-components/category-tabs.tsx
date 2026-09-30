@@ -3,19 +3,18 @@
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils/cn";
 import { useState } from "react";
-import { categories } from "../data";
 
 const MOBILE_VISIBLE_COUNT = 5;
 const VISIBLE_COUNT = 15;
 
-export function CategoryTabs() {
+export function CategoryTabs({ categories }: { categories: string[] }) {
   const [active, setActive] = useState("Featured");
   const [showAll, setShowAll] = useState(false);
 
   const visible = showAll ? categories : categories.slice(0, VISIBLE_COUNT);
 
   return (
-    <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-2 sm:gap-4">
+    <div className="mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-2 sm:gap-4">
       {visible.map((category, index) => (
         <Badge
           key={category}
