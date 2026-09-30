@@ -1,9 +1,10 @@
-import { BrandMarqueeSection } from "@/components/sections/brand-marquee-section";
-import { CareerGrowthSection } from "@/components/sections/career-growth-section";
-import { CourseGridSection } from "@/components/sections/course-grid-section";
-import { CTASection } from "@/components/sections/cta-section";
-import { HeroSection } from "@/components/sections/hero-section";
-import { LearningPathsSection } from "@/components/sections/learning-paths-section";
+import { BrandMarqueeSection } from "@/sections/brand-marquee-section";
+import { CareerGrowthSection } from "@/sections/career-growth-section";
+import { CourseGridSection } from "@/sections/course-grid-section";
+import { CTASection } from "@/sections/cta-section";
+import { HeroSection } from "@/sections/hero-section";
+import { LearningPathsSection } from "@/sections/learning-paths-section";
+import { TestimonialsSection } from "@/sections/testimonial-section";
 
 export default function Home() {
   return (
@@ -14,8 +15,7 @@ export default function Home() {
       <LearningPathsSection />
       <CareerGrowthSection />
       <CTASection />
-      {/* CtaBanner */}
-      {/* TestimonialsSection */}
+      <TestimonialsSection />
     </>
   );
 }
