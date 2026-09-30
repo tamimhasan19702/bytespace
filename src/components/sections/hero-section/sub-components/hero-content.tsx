@@ -12,12 +12,15 @@ export function HeroContent({ className }: { className?: string }) {
 
   useGSAP(
     () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
       gsap.from(".hero-reveal", {
         y: 30,
         opacity: 0,
         duration: 0.9,
         ease: "power3.out",
         stagger: 0.15,
+        scrollTrigger: { trigger: scope.current, start: "top 85%", once: true },
       });
     },
     { scope },
@@ -37,8 +40,8 @@ export function HeroContent({ className }: { className?: string }) {
         </h1>
 
         <p className="hero-reveal font-body mt-4 max-w-xl text-sm text-white-600 sm:text-base">
-          Unlock your creativity, gain valuable knowledge, and grow your business with our wide
-          range of courses.
+          Unlock your creativity, gain valuable knowledge, and grow your
+          business with our wide range of courses.
         </p>
       </div>
 

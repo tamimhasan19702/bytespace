@@ -13,12 +13,15 @@ export function HeroOrnaments() {
 
   useGSAP(
     () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
       gsap.from("svg", {
         opacity: 0,
         scale: 0.9,
         duration: 1,
         ease: "power3.out",
         stagger: 0.1,
+        scrollTrigger: { trigger: scope.current, start: "top 85%", once: true },
       });
 
       gsap.to("svg", {
@@ -36,6 +39,7 @@ export function HeroOrnaments() {
         duration: 1,
         ease: "power3.out",
         delay: 0.2,
+        scrollTrigger: { trigger: scope.current, start: "top 85%", once: true },
       });
 
       gsap.from(heroImage.current, {
@@ -44,6 +48,7 @@ export function HeroOrnaments() {
         duration: 1,
         ease: "power3.out",
         delay: 0.4,
+        scrollTrigger: { trigger: scope.current, start: "top 85%", once: true },
       });
     },
     { scope },
@@ -51,7 +56,11 @@ export function HeroOrnaments() {
 
   return (
     <>
-      <div ref={scope} aria-hidden="true" className="pointer-events-none absolute inset-0 z-10">
+      <div
+        ref={scope}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-10"
+      >
         {/* Desktop */}
         <div className="absolute inset-0 hidden md:block">
           {/* right */}
@@ -116,7 +125,7 @@ export function HeroOrnaments() {
         ref={heroImage}
         className="absolute bottom-0 left-1/2 z-20 w-full max-w-80 -translate-x-1/2 md:w-[50vw] md:max-w-150"
       >
-        <HeroImage className=" text-[300px] sm:text-[400px] md:text-[500px] lg:text-[600px]" />
+        <HeroImage className=" text-[300px] sm:text-[400px] md:text-[500px] lg:text-[600px] 2xl:text-[800px]" />
       </div>
     </>
   );

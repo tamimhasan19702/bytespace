@@ -1,4 +1,5 @@
 import { ItemEight } from "./item-eight";
+import { ItemElelven } from "./item-eleven";
 import { ItemFive } from "./item-five";
 import { ItemFour } from "./item-four";
 import { ItemNine } from "./item-nine";
@@ -22,7 +23,7 @@ type OrnamentItemsProps = {
     | "item-eight"
     | "item-nine"
     | "item-ten"
-    | "";
+    | "item-eleven";
 };
 
 export function OrnamentItems({ className, variant }: OrnamentItemsProps) {
@@ -47,6 +48,8 @@ export function OrnamentItems({ className, variant }: OrnamentItemsProps) {
       return <ItemNine className={className} />;
     case "item-ten":
       return <ItemTen className={className} />;
+    case "item-eleven":
+      return <ItemElelven className={className} />;
     default:
       return null;
   }
