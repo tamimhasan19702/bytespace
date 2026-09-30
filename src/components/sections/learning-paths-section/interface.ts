@@ -1,9 +1,9 @@
-import type { LucideIcon } from "lucide-react";
+import type { IconName } from "@/components/icons/interface";
 
 export interface LearningPath {
   id: string;
   label: string;
-  icon: LucideIcon;
+  icon: IconName;
 }
 
 export interface LearningPathsContent {
