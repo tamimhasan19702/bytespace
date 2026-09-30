@@ -63,7 +63,7 @@ export function MobileMenu({ stuck = false }: { stuck?: boolean }) {
             nativeButton={false}
             render={
               <Link
-                href="/login"
+                href="/signin"
                 className="font-body flex h-11 w-full items-center justify-center rounded-full border border-shuttle-gray-800 font-bold text-base text-shuttle-gray-800 transition-colors hover:bg-persian-blue-100"
               />
             }
@@ -75,7 +75,7 @@ export function MobileMenu({ stuck = false }: { stuck?: boolean }) {
             nativeButton={false}
             render={
               <Link
-                href="/register"
+                href="/joinus"
                 className="font-body flex h-11 w-full items-center justify-center rounded-full bg-electric-lime-400 font-bold text-base text-shuttle-gray-900 transition-colors hover:bg-electric-lime-500"
               />
             }

@@ -65,7 +65,7 @@ export function Header() {
                 ? "text-shuttle-gray-800 hover:text-persian-blue-600"
                 : "text-shuttle-gray-50 hover:text-persian-blue-200"
             }
-            href="/login"
+            href="/signin"
           >
             Sign in
           </Link>
@@ -75,7 +75,7 @@ export function Header() {
                 ? "text-shuttle-gray-800 hover:text-persian-blue-600"
                 : "text-shuttle-gray-50 hover:text-persian-blue-200"
             }
-            href="/register"
+            href="/joinus"
           >
             Join us
           </Link>
