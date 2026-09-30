@@ -5,7 +5,7 @@ export function CourseGridSkeleton() {
     <div
       role="status"
       aria-live="polite"
-      className="mt-25 mx-auto grid w-full max-w-300 grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
+      className="mt-15 lg:mt-25 mx-auto grid w-full max-w-300 grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
     >
       <span className="sr-only">Loading courses…</span>
 
