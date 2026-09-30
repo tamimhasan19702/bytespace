@@ -1,20 +1,12 @@
-import {
-  Building2,
-  Camera,
-  CodeXml,
-  Laptop,
-  Megaphone,
-  Palette,
-} from "lucide-react";
 import { LearningPath, LearningPathsContent } from "./interface";
 
 export const learningPaths: LearningPath[] = [
-  { id: "design", label: "Design", icon: Palette },
-  { id: "development", label: "Development", icon: CodeXml },
-  { id: "it-software", label: "IT & Software", icon: Laptop },
-  { id: "business", label: "Business", icon: Building2 },
-  { id: "marketing", label: "Marketing", icon: Megaphone },
-  { id: "photography", label: "Photography", icon: Camera },
+  { id: "design", label: "Design", icon: "design" },
+  { id: "development", label: "Development", icon: "development" },
+  { id: "it-software", label: "IT & Software", icon: "software" },
+  { id: "business", label: "Business", icon: "business" },
+  { id: "marketing", label: "Marketing", icon: "marketing" },
+  { id: "photography", label: "Photography", icon: "photography" },
 ];
 
 export async function getLearningPaths(): Promise<LearningPathsContent> {
