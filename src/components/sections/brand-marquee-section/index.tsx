@@ -1,5 +1,6 @@
 "use client";
 
+import { IconStore } from "@/components/icons";
 import { gsap, useGSAP } from "@/lib/animations/gsap";
 import { fillToMinimum } from "@/lib/utils/fill-to-minimum";
 import { useRef } from "react";
@@ -33,14 +34,8 @@ export function BrandMarqueeSection() {
     >
       <div ref={trackRef} className="flex w-max items-center gap-8 sm:gap-12 lg:gap-18">
         {fillToMinimum(brands).map((brand, i) => (
-          <div
-            key={i}
-            className="flex shrink-0 items-center gap-1.5 text-shuttle-gray-500 sm:gap-2"
-          >
-            <brand.icon className="h-7 w-7 sm:h-8 sm:w-8 lg:h-10 lg:w-10" />
-            <span className="font-heading text-lg font-bold sm:text-xl lg:text-2xl">
-              {brand.name}
-            </span>
+          <div key={i} className="flex shrink-0 items-center">
+            <IconStore iconName={brand} className="text-[170px] text-shuttle-gray-400" />
           </div>
         ))}
       </div>
