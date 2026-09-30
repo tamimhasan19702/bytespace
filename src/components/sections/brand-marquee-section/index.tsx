@@ -13,7 +13,7 @@ const brands = [
   { name: "Logoipsum", icon: Sparkle },
 ];
 
-export function BrandMarquee() {
+export function BrandMarqueeSection() {
   const scope = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
