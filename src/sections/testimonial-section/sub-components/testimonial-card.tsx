@@ -18,10 +18,12 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
         <div>
           <h3 className="font-heading mt-4 text-xl font-bold text-black">{testimonial.name}</h3>
-          <p className="font-body text-lg font-medium text-persian-blue-600">{testimonial.role}</p>
+          <p className="font-body test-sm lg:text-lg font-medium text-persian-blue-600">
+            {testimonial.role}
+          </p>
         </div>
 
-        <p className="font-body mt-4 text-lg leading-relaxed text-shuttle-gray-500">
+        <p className="font-body mt-4 test-sm lg:text-lg leading-relaxed text-shuttle-gray-500">
           &ldquo;{testimonial.quote}&rdquo;
         </p>
       </CardContent>
