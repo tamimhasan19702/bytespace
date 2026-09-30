@@ -1,14 +1,8 @@
 import { SectionHeading } from "@/components/section-heading";
-import dynamic from "next/dynamic";
+import { Suspense } from "react";
 import { CategoryTabs } from "./sub-components/category-tabs";
+import { CourseGrid } from "./sub-components/course-grid";
 import { CourseGridSkeleton } from "./sub-components/course-grid-skeleton";
-
-const CourseGrid = dynamic(
-  () => import("./sub-components/course-grid").then((mod) => mod.CourseGrid),
-  {
-    loading: () => <CourseGridSkeleton />,
-  },
-);
 
 export function CourseGridSection() {
   return (
@@ -22,7 +16,9 @@ export function CourseGridSection() {
         <CategoryTabs />
       </div>
 
-      <CourseGrid />
+      <Suspense fallback={<CourseGridSkeleton />}>
+        <CourseGrid />
+      </Suspense>
     </section>
   );
 }

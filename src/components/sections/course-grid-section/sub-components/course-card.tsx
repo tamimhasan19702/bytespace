@@ -72,7 +72,9 @@ export function CourseCard({ course }: { course: Course }) {
           <span className="font-heading text-lg font-bold text-persian-blue-600">
             ${course.price}
           </span>
-          <span className="font-body text-xs text-shuttle-gray-400">/lifetime</span>
+          <span className="font-body text-xs text-shuttle-gray-400">
+            /lifetime
+          </span>
         </div>
       </CardContent>
     </Card>
