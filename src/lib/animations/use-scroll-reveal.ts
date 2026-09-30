@@ -11,12 +11,14 @@ export function useScrollReveal<T extends HTMLElement>(
   useGSAP(
     () => {
       if (!ref.current) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
       gsap.from(ref.current, {
         y: 40,
         opacity: 0,
         duration: 0.8,
         ease: "power3.out",
-        scrollTrigger: { trigger: ref.current, start: "top 85%" },
+        scrollTrigger: { trigger: ref.current, start: "top 85%", once: true },
         ...options,
       });
     },
