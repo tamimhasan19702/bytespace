@@ -1,16 +1,22 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils/cn";
 import { BarChart2, Star } from "lucide-react";
 import Image from "next/image";
 import type { Course } from "../interface";
 
-export function CourseCard({ course }: { course: Course }) {
+export function CourseCard({ course, className }: { course: Course; className?: string }) {
   const metaPillClass =
     "font-body rounded-full border-0 bg-white/60 px-2.5 py-3 text-[12px] font-medium text-shuttle-gray-800 backdrop-blur-sm";
 
   return (
-    <Card className="h-full overflow-hidden rounded-2xl border-0 p-4 shadow-md transition-shadow hover:shadow-lg">
+    <Card
+      className={cn(
+        "h-full overflow-hidden rounded-2xl border-0 p-4 shadow-md transition-shadow hover:shadow-lg",
+        className,
+      )}
+    >
       <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
         <Image
           src={course.image}
@@ -72,9 +78,7 @@ export function CourseCard({ course }: { course: Course }) {
           <span className="font-heading text-lg font-bold text-persian-blue-600">
             ${course.price}
           </span>
-          <span className="font-body text-xs text-shuttle-gray-400">
-            /lifetime
-          </span>
+          <span className="font-body text-xs text-shuttle-gray-400">/lifetime</span>
         </div>
       </CardContent>
     </Card>
