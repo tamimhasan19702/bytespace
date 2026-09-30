@@ -61,7 +61,7 @@ export function HeroOrnaments() {
           />
           <OrnamentItems
             variant="item-two"
-            className="absolute top-[10%] left-[80%] text-[clamp(6rem,20vw,23.1rem)] text-electric-lime-400"
+            className="absolute top-[10%] left-[85%] text-[clamp(6rem,20vw,23.1rem)] text-electric-lime-400"
           />
           <OrnamentItems
             variant="item-three"
