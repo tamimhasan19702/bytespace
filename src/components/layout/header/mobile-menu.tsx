@@ -23,12 +23,12 @@ export function MobileMenu() {
       >
         <IconStore
           iconName="hamburger-menu"
-          className="text-xl text-shuttle-gray-50 transition-colors hover:text-persian-blue-200"
+          className="text-xl text-shuttle-gray-50 transition-colors"
         />
       </DrawerTrigger>
 
       <DrawerContent className="h-full w-[80%] max-w-sm rounded-none">
-        <DrawerHeader className="flex flex-row items-center justify-between border-b border-border">
+        <DrawerHeader className="flex flex-row items-center justify-between border-b border-border p-4">
           <DrawerTitle className="font-heading text-lg text-persian-blue-800">
             <Logo variant="alt" />
           </DrawerTitle>
