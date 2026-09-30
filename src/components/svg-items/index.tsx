@@ -10,6 +10,7 @@ import { ItemTen } from "./item-ten";
 import { ItemThree } from "./item-three";
 import { ItemTwelve } from "./item-twelve";
 import { ItemTwo } from "./item-two";
+import { ItemThirteen } from "./item-thirteen";
 
 type SvgItemsProps = {
   className?: string;
@@ -25,7 +26,8 @@ type SvgItemsProps = {
     | "item-nine"
     | "item-ten"
     | "item-eleven"
-    | "item-twelve";
+    | "item-twelve"
+    | "item-thirteen";
 };
 
 export function SvgItems({ className, variant }: SvgItemsProps) {
@@ -54,6 +56,8 @@ export function SvgItems({ className, variant }: SvgItemsProps) {
       return <ItemElelven className={className} />;
     case "item-twelve":
       return <ItemTwelve className={className} />;
+    case "item-thirteen":
+      return <ItemThirteen className={className} />;
     default:
       return null;
   }
