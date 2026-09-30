@@ -1,5 +1,5 @@
 import { HeroContent } from "./sub-components/hero-content";
-import { HeroOrnaments } from "./sub-components/ornaments-layer";
+import { HeroOrnaments } from "./sub-components/hero-ornaments";
 import { SquarePattern } from "./sub-components/sqaure-pattern";
 
 export function HeroSection() {
