@@ -1,6 +1,6 @@
 "use client";
 
-import { OrnamentItems } from "@/components/ornament-items";
+import { SvgItems } from "@/components/svg-items";
 import { gsap, useGSAP } from "@/lib/animations/gsap";
 import { useRef } from "react";
 import { Elipse } from "./elipse";
@@ -64,29 +64,29 @@ export function HeroOrnaments() {
         {/* Desktop */}
         <div className="absolute inset-0 hidden md:block">
           {/* right */}
-          <OrnamentItems
+          <SvgItems
             variant="item-one"
             className="absolute top-[50%] right-[10%] text-[clamp(3rem,10vw,11.75rem)] text-shuttle-gray-100"
           />
-          <OrnamentItems
+          <SvgItems
             variant="item-two"
             className="absolute top-[10%] -right-[5%] text-[clamp(6rem,20vw,23.1rem)] text-electric-lime-400"
           />
-          <OrnamentItems
+          <SvgItems
             variant="item-three"
             className="absolute top-[70%] right-[3%] text-[clamp(5rem,17vw,20.7rem)] text-shuttle-gray-100"
           />
 
           {/* left */}
-          <OrnamentItems
+          <SvgItems
             variant="item-six"
             className="absolute top-[25%] left-[0%] text-[clamp(6rem,20vw,24.0625rem)] text-electric-lime-400"
           />
-          <OrnamentItems
+          <SvgItems
             variant="item-five"
             className="absolute top-[50%] left-[15%] text-[clamp(3rem,10vw,10.9375rem)] text-shuttle-gray-100"
           />
-          <OrnamentItems
+          <SvgItems
             variant="item-four"
             className="absolute top-[70%] left-[5%] text-[clamp(5rem,17vw,21.375rem)] text-shuttle-gray-100"
           />
@@ -95,20 +95,20 @@ export function HeroOrnaments() {
         {/* Mobile layer */}
         <div className="absolute inset-0 md:hidden">
           {/* right */}
-          <OrnamentItems
+          <SvgItems
             variant="item-two"
             className="absolute top-[6%] -right-[5%] text-[clamp(5rem,32vw,9rem)] text-electric-lime-400"
           />
-          <OrnamentItems
+          <SvgItems
             variant="item-one"
             className="absolute z-20 bottom-[20%] right-[2%] text-[clamp(3.5rem,22vw,6rem)] text-shuttle-gray-100"
           />
           {/* left */}
-          <OrnamentItems
+          <SvgItems
             variant="item-six"
             className="absolute top-[8%] left-[0%] text-[clamp(4rem,26vw,7rem)] text-shuttle-gray-100"
           />
-          <OrnamentItems
+          <SvgItems
             variant="item-three"
             className="absolute z-20 bottom-[15%] left-[2%] text-[clamp(4rem,28vw,7.5rem)] text-electric-lime-400"
           />

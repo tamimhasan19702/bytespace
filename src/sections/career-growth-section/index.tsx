@@ -1,27 +1,27 @@
-import { OrnamentItems } from "@/components/ornament-items";
+import { SvgItems } from "@/components/svg-items";
 import { FeatureRow } from "./sub-components/feature-row";
 
 export function CareerGrowthSection() {
   return (
     <section className="container relative flex flex-col">
       {/*decorative backgrounds  */}
-      <OrnamentItems
+      <SvgItems
         variant="item-seven"
         className="absolute pointer-events-none overflow-hidden top-0 -left-38 hidden lg:block"
       />
-      <OrnamentItems
+      <SvgItems
         variant="item-eight"
         className="absolute pointer-events-none overflow-hidden top-0 right-0 hidden lg:block"
       />
-      <OrnamentItems
+      <SvgItems
         variant="item-nine"
         className="absolute pointer-events-none overflow-hidden bottom-0 left-0 hidden lg:block"
       />
-      <OrnamentItems
+      <SvgItems
         variant="item-eleven"
         className="absolute pointer-events-none overflow-hidden bottom-0 left-0 hidden lg:block"
       />
-      <OrnamentItems
+      <SvgItems
         variant="item-ten"
         className="absolute pointer-events-none overflow-hidden bottom-0 right-0 hidden lg:block"
       />

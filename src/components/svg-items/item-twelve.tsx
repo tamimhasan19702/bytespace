@@ -1,4 +1,4 @@
-export const SquarePattern = ({ className }: { className?: string }) => {
+export const ItemTwelve = ({ className }: { className?: string }) => {
   return (
     <svg
       width="1920"

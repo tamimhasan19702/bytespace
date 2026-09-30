@@ -1,6 +1,6 @@
 "use client";
 
-import { OrnamentItems } from "@/components/ornament-items";
+import { SvgItems } from "@/components/svg-items";
 import { gsap, useGSAP } from "@/lib/animations/gsap";
 import { useRef } from "react";
 import { testimonials } from "./data";
@@ -32,15 +32,15 @@ export function TestimonialsSection() {
       ref={scope}
       className="relative overflow-hidden container section-y flex flex-col gap-6 md:gap-10 lg:gap-18"
     >
-      <OrnamentItems
+      <SvgItems
         variant="item-seven"
         className="absolute pointer-events-none overflow-hidden top-0 right-50 hidden lg:block -z-10"
       />
-      <OrnamentItems
+      <SvgItems
         variant="item-eleven"
         className="absolute pointer-events-none overflow-hidden bottom-0 right-0 rotate-180 hidden lg:block -z-10"
       />
-      <OrnamentItems
+      <SvgItems
         variant="item-ten"
         className="absolute pointer-events-none overflow-hidden bottom-0 -left-6 rotate-90 hidden lg:block -z-10"
       />

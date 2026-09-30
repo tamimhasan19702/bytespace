@@ -8,9 +8,10 @@ import { ItemSeven } from "./item-seven";
 import { ItemSix } from "./item-six";
 import { ItemTen } from "./item-ten";
 import { ItemThree } from "./item-three";
+import { ItemTwelve } from "./item-twelve";
 import { ItemTwo } from "./item-two";
 
-type OrnamentItemsProps = {
+type SvgItemsProps = {
   className?: string;
   variant:
     | "item-one"
@@ -23,10 +24,11 @@ type OrnamentItemsProps = {
     | "item-eight"
     | "item-nine"
     | "item-ten"
-    | "item-eleven";
+    | "item-eleven"
+    | "item-twelve";
 };
 
-export function OrnamentItems({ className, variant }: OrnamentItemsProps) {
+export function SvgItems({ className, variant }: SvgItemsProps) {
   switch (variant) {
     case "item-one":
       return <ItemOne className={className} />;
@@ -50,6 +52,8 @@ export function OrnamentItems({ className, variant }: OrnamentItemsProps) {
       return <ItemTen className={className} />;
     case "item-eleven":
       return <ItemElelven className={className} />;
+    case "item-twelve":
+      return <ItemTwelve className={className} />;
     default:
       return null;
   }
