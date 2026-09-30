@@ -27,11 +27,11 @@ export function HeroContent({ className }: { className?: string }) {
     <div
       ref={scope}
       className={cn(
-        "relative z-20 mx-auto flex max-w-3xl flex-col gap-8 md:gap-12 items-center",
+        "relative z-20 mx-auto flex max-w-3xl flex-col gap-4 md:gap-12 items-center",
         className,
       )}
     >
-      <div className="flex flex-col items-center text-center gap-5 md:gap-8">
+      <div className="flex flex-col items-center text-center gap-2 md:gap-8">
         <h1 className="hero-reveal font-heading text-4xl font-bold text-white-800 sm:text-5xl md:text-6xl">
           Get Access to Hundreds Courses Available
         </h1>

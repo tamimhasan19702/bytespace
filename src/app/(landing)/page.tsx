@@ -6,7 +6,6 @@ export default function Home() {
     <>
       <HeroSection />
       <BrandMarquee />
-      {/* CategoryTabs */}
       {/* CourseGrid */}
       {/* StatsStrip */}
       {/* GrowthSection */}
