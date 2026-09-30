@@ -7,9 +7,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-satoshi);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-body: var(--font-satoshi);
+  --font-heading: var(--font-poppins);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -39,6 +40,39 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-persian-blue-100: var(--persian-blue-100);
+  --color-persian-blue-200: var(--persian-blue-200);
+  --color-persian-blue-300: var(--persian-blue-300);
+  --color-persian-blue-400: var(--persian-blue-400);
+  --color-persian-blue-500: var(--persian-blue-500);
+  --color-persian-blue-600: var(--persian-blue-600);
+  --color-persian-blue-700: var(--persian-blue-700);
+  --color-persian-blue-800: var(--persian-blue-800);
+  --color-electric-lime-100: var(--electric-lime-100);
+  --color-electric-lime-200: var(--electric-lime-200);
+  --color-electric-lime-300: var(--electric-lime-300);
+  --color-electric-lime-400: var(--electric-lime-400);
+  --color-electric-lime-500: var(--electric-lime-500);
+  --color-electric-lime-600: var(--electric-lime-600);
+  --color-electric-lime-700: var(--electric-lime-700);
+  --color-electric-lime-800: var(--electric-lime-800);
+  --color-white-100: var(--white-100);
+  --color-white-200: var(--white-200);
+  --color-white-300: var(--white-300);
+  --color-white-400: var(--white-400);
+  --color-white-500: var(--white-500);
+  --color-white-600: var(--white-600);
+  --color-white-700: var(--white-700);
+  --color-white-800: var(--white-800);
+  --color-shuttle-gray-50: var(--shuttle-gray-50);
+  --color-shuttle-gray-100: var(--shuttle-gray-100);
+  --color-shuttle-gray-200: var(--shuttle-gray-200);
+  --color-shuttle-gray-300: var(--shuttle-gray-300);
+  --color-shuttle-gray-400: var(--shuttle-gray-400);
+  --color-shuttle-gray-500: var(--shuttle-gray-500);
+  --color-shuttle-gray-600: var(--shuttle-gray-600);
+  --color-shuttle-gray-700: var(--shuttle-gray-700);
+  --color-shuttle-gray-800: var(--shuttle-gray-800);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -46,9 +80,11 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --spacing-header: var(--header-height);
 }
 
 :root {
+  --header-height: 4rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -81,6 +117,54 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* custom colors for bytespace */
+  /* Persian Blue */
+  --persian-blue-100: #e6ecff;
+  --persian-blue-200: #b3c7ff;
+  --persian-blue-300: #80a2ff;
+  --persian-blue-400: #4d7cff;
+  --persian-blue-500: #1a57ff;
+  --persian-blue-600: #0044ff;
+  --persian-blue-700: #0040f0;
+  --persian-blue-800: #003be2;
+
+  /* Electric Lime */
+  --electric-lime-100: #f8fedc;
+  --electric-lime-200: #eefeaa;
+  --electric-lime-300: #e1fc69;
+  --electric-lime-400: #d4fb20;
+  --electric-lime-500: #bde604;
+  --electric-lime-600: #9cbe03;
+  --electric-lime-700: #7b9603;
+  --electric-lime-800: #5a6e02;
+
+  /* White (opacity scale) */
+  --white-100: rgba(255, 255, 255, 0.1);
+  --white-200: rgba(255, 255, 255, 0.2);
+  --white-300: rgba(255, 255, 255, 0.3);
+  --white-400: rgba(255, 255, 255, 0.4);
+  --white-500: rgba(255, 255, 255, 0.55);
+  --white-600: rgba(255, 255, 255, 0.7);
+  --white-700: rgba(255, 255, 255, 0.85);
+  --white-800: rgba(255, 255, 255, 1);
+
+  /* Shuttle Gray */
+  --shuttle-gray-50: #f5f5f6;
+  --shuttle-gray-100: #edeeee;
+  --shuttle-gray-200: #d3d3d4;
+  --shuttle-gray-300: #b5b5b6;
+  --shuttle-gray-400: #969698;
+  --shuttle-gray-500: #77787a;
+  --shuttle-gray-600: #59595c;
+  --shuttle-gray-700: #3e3f42;
+  --shuttle-gray-800: #242528;
+}
+
+@media (width >= 48rem) {
+  :root {
+    --header-height: 5rem;
+  }
 }
 
 .dark {
@@ -122,9 +206,85 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
   }
   html {
-    @apply font-sans;
+    @apply font-body scroll-smooth;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .container {
+    width: 100%;
+    max-width: 1920px;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw + 0.5rem, 6rem);
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-inline: clamp(1.5rem, 4vw, 3rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-inline: clamp(2rem, 5vw, 4.5rem);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .container {
+      padding-inline: clamp(3rem, 5vw, 6rem);
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .container {
+      padding-inline: 6rem;
+    }
+  }
+
+  .section-y {
+    padding-block: clamp(2rem, 6vw + 0.5rem, 7rem);
+  }
+
+  @media (min-width: 640px) {
+    .section-y {
+      padding-block: clamp(2.5rem, 7vw, 4.5rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-y {
+      padding-block: clamp(3.5rem, 7vw, 5.5rem);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .section-y {
+      padding-block: clamp(4.5rem, 6vw, 6.5rem);
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .section-y {
+      padding-block: 7rem;
+    }
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
