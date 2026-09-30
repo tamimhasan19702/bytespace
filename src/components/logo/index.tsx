@@ -3,9 +3,10 @@ import Link from "next/link";
 
 type LogoProps = {
   variant?: "default" | "alt";
+  preload?: boolean;
 };
 
-export function Logo({ variant = "default" }: LogoProps) {
+export function Logo({ variant = "default", preload = false }: LogoProps) {
   const isAlt = variant === "alt";
 
   return (
@@ -18,6 +19,7 @@ export function Logo({ variant = "default" }: LogoProps) {
         alt="ByteSpace Logo"
         width={170}
         height={37}
+        preload={preload}
       />
     </Link>
   );
