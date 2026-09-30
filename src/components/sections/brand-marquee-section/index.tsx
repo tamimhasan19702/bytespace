@@ -2,16 +2,8 @@
 
 import { gsap, useGSAP } from "@/lib/animations/gsap";
 import { fillToMinimum } from "@/lib/utils/fill-to-minimum";
-import { CircleDot, Sparkle, Sparkles, Waves, Zap } from "lucide-react";
 import { useRef } from "react";
-
-const brands = [
-  { name: "Logoipsum", icon: Waves },
-  { name: "Logoipsum", icon: Sparkles },
-  { name: "Logoipsum", icon: Zap },
-  { name: "Logoipsum", icon: CircleDot },
-  { name: "Logoipsum", icon: Sparkle },
-];
+import { brands } from "./data";
 
 export function BrandMarqueeSection() {
   const scope = useRef<HTMLDivElement>(null);
@@ -41,9 +33,14 @@ export function BrandMarqueeSection() {
     >
       <div ref={trackRef} className="flex w-max items-center gap-8 sm:gap-12 lg:gap-18">
         {fillToMinimum(brands).map((brand, i) => (
-          <div key={i} className="flex shrink-0 items-center gap-1.5 text-shuttle-gray-500 sm:gap-2">
+          <div
+            key={i}
+            className="flex shrink-0 items-center gap-1.5 text-shuttle-gray-500 sm:gap-2"
+          >
             <brand.icon className="h-7 w-7 sm:h-8 sm:w-8 lg:h-10 lg:w-10" />
-            <span className="font-heading text-lg font-bold sm:text-xl lg:text-2xl">{brand.name}</span>
+            <span className="font-heading text-lg font-bold sm:text-xl lg:text-2xl">
+              {brand.name}
+            </span>
           </div>
         ))}
       </div>
