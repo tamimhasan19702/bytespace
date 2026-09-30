@@ -1,6 +1,7 @@
 "use client";
 
 import { IconStore } from "@/components/icons";
+import { cn } from "@/lib/utils/cn";
 import { X } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "../../logo";
@@ -15,7 +16,7 @@ import {
 } from "../../ui/drawer";
 import { navLinks } from "./links";
 
-export function MobileMenu() {
+export function MobileMenu({ stuck = false }: { stuck?: boolean }) {
   return (
     <Drawer swipeDirection="right">
       <DrawerTrigger
@@ -23,7 +24,10 @@ export function MobileMenu() {
       >
         <IconStore
           iconName="hamburger-menu"
-          className="text-xl text-shuttle-gray-50 transition-colors"
+          className={cn(
+            "text-xl transition-colors",
+            stuck ? "text-shuttle-gray-800" : "text-shuttle-gray-50",
+          )}
         />
       </DrawerTrigger>
 
