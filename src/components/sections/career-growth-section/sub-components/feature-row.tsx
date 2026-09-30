@@ -72,28 +72,20 @@ export function FeatureRow({
     >
       <div
         data-feature-image
-        className={cn(
-          "flex justify-center relative",
-          imagePosition === "right" && "lg:order-2",
-        )}
+        className={cn("flex justify-center relative", imagePosition === "right" && "lg:order-2")}
       >
         {imagePosition === "left" ? (
-          <CareerLeftVisual />
+          <CareerLeftVisual className="text-[500px] lg:text-[720px]" />
         ) : (
-          <CareerRightVisual />
+          <CareerRightVisual className="text-[500px] lg:text-[720px]" />
         )}
       </div>
 
-      <div
-        data-feature-text
-        className={cn(imagePosition === "right" && "lg:order-1")}
-      >
+      <div data-feature-text className={cn(imagePosition === "right" && "lg:order-1")}>
         <h2 className="font-heading md:text-[44px] font-bold text-shuttle-gray-800 text-2xl">
           {title}
         </h2>
-        <p className="font-body mt-4 text-sm text-shuttle-gray-400 md:text-lg">
-          {description}
-        </p>
+        <p className="font-body mt-4 text-sm text-shuttle-gray-400 md:text-lg">{description}</p>
 
         {stats && (
           <div className="mt-8 flex flex-wrap gap-8">
@@ -102,9 +94,7 @@ export function FeatureRow({
                 <p className="font-heading text-[38px] font-semibold text-persian-blue-600">
                   {stat.value}
                 </p>
-                <p className="font-body text-lg text-shuttle-gray-400">
-                  {stat.label}
-                </p>
+                <p className="font-body text-lg text-shuttle-gray-400">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -113,15 +103,9 @@ export function FeatureRow({
         {checklist && (
           <ul className="mt-6 flex flex-col gap-3">
             {checklist.map((item) => (
-              <li
-                key={item}
-                data-feature-item
-                className="flex items-center gap-2.5"
-              >
+              <li key={item} data-feature-item className="flex items-center gap-2.5">
                 <CheckCircle2 className="h-4 w-4 shrink-0 fill-persian-blue-600 text-white md:h-5 md:w-5" />
-                <span className="font-body text-sm text-shuttle-gray-400 md:text-lg">
-                  {item}
-                </span>
+                <span className="font-body text-sm text-shuttle-gray-400 md:text-lg">{item}</span>
               </li>
             ))}
           </ul>

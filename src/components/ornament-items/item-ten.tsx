@@ -18,7 +18,7 @@ export const ItemTen = ({ className }: { className?: string }) => {
           cy="608.5"
           r="568.5"
           fill={`url(#${uid}paint0_radial_34_1304)`}
-          fill-opacity="0.24"
+          fillOpacity="0.24"
         />
       </g>
       <defs>
@@ -29,9 +29,9 @@ export const ItemTen = ({ className }: { className?: string }) => {
           width="1217"
           height="1217"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feGaussianBlur stdDeviation="20" result="effect1_foregroundBlur_34_1304" />
         </filter>
@@ -43,10 +43,10 @@ export const ItemTen = ({ className }: { className?: string }) => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(608.5 608.5) rotate(90) scale(568.5)"
         >
-          <stop stop-color="#003BE2" />
-          <stop offset="0.53" stop-color="#003BE2" stop-opacity="0.23" />
-          <stop offset="0.75" stop-color="#003BE2" stop-opacity="0.06" />
-          <stop offset="1" stop-color="#003BE2" stop-opacity="0" />
+          <stop stopColor="#003BE2" />
+          <stop offset="0.53" stopColor="#003BE2" stopOpacity="0.23" />
+          <stop offset="0.75" stopColor="#003BE2" stopOpacity="0.06" />
+          <stop offset="1" stopColor="#003BE2" stopOpacity="0" />
         </radialGradient>
       </defs>
     </svg>

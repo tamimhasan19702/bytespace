@@ -1,7 +1,7 @@
 export const CareerRightVisual = ({ className }: { className?: string }) => (
   <svg
-    width={703}
-    height={697}
+    width="1em"
+    height="1em"
     viewBox="0 0 703 697"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
