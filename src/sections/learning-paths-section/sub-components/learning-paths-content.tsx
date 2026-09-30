@@ -34,7 +34,7 @@ export function LearningPathsContent() {
 
       <div
         ref={scope}
-        className="mt-10 mx-auto grid max-w-300 grid-cols-2 gap-6 sm:grid-cols-3 md:gap-10 xl:grid-cols-6"
+        className="mt-10 mx-auto grid grid-cols-2 gap-6 sm:grid-cols-3 md:gap-10 xl:grid-cols-6"
       >
         {paths.map((path) => (
           <div key={path.id} data-learning-path className="h-full">
