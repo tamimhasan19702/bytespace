@@ -20,3 +20,10 @@ export interface Course {
   avatars: CourseAvatar[];
   studentCountLabel: string;
 }
+
+export interface CourseGridContent {
+  title: string;
+  description: string;
+  categories: string[];
+  courses: Course[];
+}
