@@ -61,7 +61,7 @@ export function HeroOrnaments() {
           />
           <OrnamentItems
             variant="item-two"
-            className="absolute top-[10%] left-[80%] text-[clamp(6rem,20vw,23.1rem)] text-electric-lime-400"
+            className="absolute top-[10%] left-[85%] text-[clamp(6rem,20vw,23.1rem)] text-electric-lime-400"
           />
           <OrnamentItems
             variant="item-three"
@@ -114,7 +114,7 @@ export function HeroOrnaments() {
       {/* Hero image */}
       <div
         ref={heroImage}
-        className="absolute bottom-0 left-1/2 z-20 w-full max-w-90 -translate-x-1/2 md:w-[50vw] md:max-w-150"
+        className="absolute bottom-0 left-1/2 z-20 w-full max-w-80 -translate-x-1/2 md:w-[50vw] md:max-w-150"
       >
         <Image
           src="/images/male-hero.png"
