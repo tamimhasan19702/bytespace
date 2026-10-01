@@ -12,7 +12,9 @@ export type IconName =
   | "marketing"
   | "photography"
   | "shopping-bag"
-  | "software";
+  | "software"
+  | "facebook"
+  | "google"
 
 export interface IconStoreProps {
   iconName: IconName;
