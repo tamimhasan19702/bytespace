@@ -33,15 +33,15 @@ export function TestimonialsSection() {
       className="relative overflow-hidden container section-y flex flex-col gap-6 md:gap-10 lg:gap-18"
     >
       <SvgItems
-        variant="item-seven"
+        variant="item-one"
         className="absolute pointer-events-none overflow-hidden top-0 right-50 hidden lg:block -z-10"
       />
       <SvgItems
-        variant="item-eleven"
+        variant="item-five"
         className="absolute pointer-events-none overflow-hidden bottom-0 right-0 rotate-180 hidden lg:block -z-10"
       />
       <SvgItems
-        variant="item-ten"
+        variant="item-four"
         className="absolute pointer-events-none overflow-hidden bottom-0 -left-6 rotate-90 hidden lg:block -z-10"
       />
 

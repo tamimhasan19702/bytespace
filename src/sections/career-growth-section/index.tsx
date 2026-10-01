@@ -3,26 +3,26 @@ import { FeatureRow } from "./sub-components/feature-row";
 
 export function CareerGrowthSection() {
   return (
-    <section className="container relative flex flex-col">
+    <section className="container section-y relative flex flex-col">
       {/*decorative backgrounds  */}
       <SvgItems
-        variant="item-seven"
+        variant="item-one"
         className="absolute pointer-events-none overflow-hidden top-0 -left-38 hidden lg:block"
       />
       <SvgItems
-        variant="item-eight"
+        variant="item-two"
         className="absolute pointer-events-none overflow-hidden top-0 right-0 hidden lg:block"
       />
       <SvgItems
-        variant="item-nine"
+        variant="item-three"
         className="absolute pointer-events-none overflow-hidden bottom-0 left-0 hidden lg:block"
       />
       <SvgItems
-        variant="item-eleven"
+        variant="item-five"
         className="absolute pointer-events-none overflow-hidden bottom-0 left-0 hidden lg:block"
       />
       <SvgItems
-        variant="item-ten"
+        variant="item-four"
         className="absolute pointer-events-none overflow-hidden bottom-0 right-0 hidden lg:block"
       />
 
