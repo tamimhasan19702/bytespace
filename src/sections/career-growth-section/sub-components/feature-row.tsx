@@ -3,10 +3,9 @@
 import { gsap, useGSAP } from "@/lib/animations/gsap";
 import { cn } from "@/lib/utils/cn";
 import { CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 import { useRef } from "react";
 import { StatItem } from "../interface";
-import { CareerLeftVisual } from "./career-svg/career-left-visual";
-import { CareerRightVisual } from "./career-svg/career-right-visual";
 
 interface FeatureRowProps {
   title: string;
@@ -75,9 +74,21 @@ export function FeatureRow({
         className={cn("flex justify-center relative", imagePosition === "right" && "lg:order-2")}
       >
         {imagePosition === "left" ? (
-          <CareerLeftVisual className="text-[500px] lg:text-[720px]" />
+          <Image
+            src="/images/career/career-left.png"
+            alt="Career Left Visual"
+            width={621}
+            height={552}
+            className="w-full max-w-125 lg:max-w-180"
+          />
         ) : (
-          <CareerRightVisual className="text-[500px] lg:text-[720px]" />
+          <Image
+            src="/images/career/career-right.png"
+            alt="Career Right Visual"
+            width={621}
+            height={552}
+            className="w-full max-w-125 lg:max-w-180"
+          />
         )}
       </div>
 
