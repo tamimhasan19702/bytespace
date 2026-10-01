@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ByteSpace
 
-## Getting Started
+Landing page and auth screens for ByteSpace, built with Next.js (App Router), TypeScript and Tailwind CSS v4.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS v4 (CSS-first tokens via `@theme` in `src/app/globals.css`)
+- shadcn/ui primitives (Base UI under the hood)
+- GSAP + `@gsap/react` (ScrollTrigger only)
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev          # start dev server
+npm run build        # production build
+npm run start        # serve production build
+npm run lint         # eslint
+npm run format:fix   # prettier write
+npm run format:check # prettier check
+```
 
-## Learn More
+Type checking runs via `tsc --noEmit` (there is no `typecheck` script).
 
-To learn more about Next.js, take a look at the following resources:
+## Routes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Route     | Description           |
+| --------- | --------------------- |
+| `/`       | Landing page          |
+| `/signin` | Sign-in screen        |
+| `/joinus` | Create-account screen |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Folder structure
 
-## Deploy on Vercel
+```
+src/
+├── app/
+│   ├── layout.tsx                  # root layout — fonts (Poppins + Satoshi), metadata
+│   ├── globals.css                 # Tailwind v4 tokens, .container / .section-y utilities
+│   ├── (landing)/
+│   │   ├── layout.tsx              # header + <main> + footer shell
+│   │   └── page.tsx                # composes sections from @/sections
+│   └── (auth)/
+│       ├── layout.tsx              # split-panel auth shell (illustration + form card)
+│       ├── signin/page.tsx
+│       ├── joinus/page.tsx
+│       └── _sub-components/
+│           ├── auth-parts.tsx      # AuthHeading, FormField, SocialAuthButtons, OrDivider
+│           ├── data.ts             # PANEL_COPY keyed by pathname
+│           └── interface.ts        # component prop types
+│
+├── sections/                       # one folder per landing page block
+│   ├── hero-section/
+│   ├── brand-marquee-section/
+│   ├── course-grid-section/
+│   ├── learning-paths-section/
+│   ├── testimonial-section/
+│   ├── career-growth-section/
+│   └── cta-section/
+│       # each: index.tsx, optional data.ts, interface.ts, sub-components/
+│
+├── components/
+│   ├── ui/                         # shadcn primitives — do not hand-edit
+│   ├── layout/
+│   │   ├── header/                 # sticky nav, mobile menu
+│   │   └── footer/                 # link columns, newsletter, bottom bar
+│   ├── icons/                      # IconStore switch over sub-components/
+│   ├── svg-items/                  # SvgItems switch over decorative SVGs
+│   ├── logo/
+│   └── section-heading/
+│
+├── lib/
+│   ├── animations/                 # gsap registration + scroll reveal
+│   ├── fonts/satoshi/              # self-hosted body font (.otf)
+│   └── utils/                      # cn(), fill-to-minimum()
+│
+└── public/images/
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Conventions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Route groups own their local UI in `_sub-components/` (inside `app/`); sections and components use plain `sub-components/`.
+- Static content lives in a sibling `data.ts`, typed by a sibling `interface.ts`.
+- Use `cn()` from `@/lib/utils/cn` for merged class names.
+- Colors are CSS custom properties in `globals.css` (`bg-persian-blue-800`, `text-shuttle-gray-600`, …). Never build class names dynamically — Tailwind's scanner can't see them.
+- Animations are inline `useGSAP` with `{ scope: ref }`; no wrapper hooks.

@@ -2,6 +2,8 @@ import { IconStoreProps } from "./interface";
 import { BusinessIcon } from "./sub-components/business";
 import { DesignIcon } from "./sub-components/design";
 import { DevelopmentIcon } from "./sub-components/development";
+import { FacebookIcon } from "./sub-components/facebook";
+import { GoogleIcon } from "./sub-components/google";
 import { HamburgerMenuIcon } from "./sub-components/hamburger-menu";
 import { LogoIpsumFiveIcon } from "./sub-components/logoipsum-five";
 import { LogoIpsumFourIcon } from "./sub-components/logoipsum-four";
@@ -41,6 +43,10 @@ export function IconStore({ iconName, className }: IconStoreProps) {
       return <PhotographyIcon className={className} />;
     case "software":
       return <SoftwareIcon className={className} />;
+    case "facebook":
+      return <FacebookIcon className={className} />;
+    case "google":
+      return <GoogleIcon className={className} />;
     default:
       return null;
   }
