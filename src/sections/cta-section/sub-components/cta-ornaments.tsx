@@ -1,52 +1,30 @@
 "use client";
 
-import { SvgItems } from "@/components/svg-items";
 import { gsap, useGSAP } from "@/lib/animations/gsap";
+import Image from "next/image";
 import { useRef } from "react";
 
 export function CTAOrnaments() {
   const scope = useRef<HTMLDivElement>(null);
-  const ellipse = useRef<HTMLDivElement>(null);
-  const heroImage = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      gsap.from("svg", {
+      gsap.from("img", {
         opacity: 0,
-        scale: 0.9,
         duration: 1,
         ease: "power3.out",
         stagger: 0.1,
         scrollTrigger: { trigger: scope.current, start: "top 85%", once: true },
       });
 
-      gsap.to("svg", {
-        y: 20,
+      gsap.to("img", {
         duration: 3,
         ease: "sine.inOut",
         repeat: -1,
         yoyo: true,
         stagger: 0.3,
-      });
-
-      gsap.from(ellipse.current, {
-        y: 80,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        delay: 0.2,
-        scrollTrigger: { trigger: scope.current, start: "top 85%", once: true },
-      });
-
-      gsap.from(heroImage.current, {
-        y: 60,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        delay: 0.4,
-        scrollTrigger: { trigger: scope.current, start: "top 85%", once: true },
       });
     },
     { scope },
@@ -57,53 +35,90 @@ export function CTAOrnaments() {
       {/* Desktop */}
       <div className="absolute inset-0 hidden md:block">
         {/* right */}
-        <SvgItems
-          variant="item-one"
-          className="absolute top-[2%] right-[20%] text-[clamp(3rem,10vw,11.75rem)] text-electric-lime-400"
+        <Image
+          src="/images/cta/item-one.png"
+          alt="cta Item one"
+          width={188}
+          height={188}
+          className="absolute top-[2%] right-[20%] z-[-10]"
         />
-        <SvgItems
-          variant="item-two"
-          className="absolute -top-[10%] -right-[5%] text-[clamp(6rem,20vw,23.1rem)] text-shuttle-gray-50"
+        <Image
+          src="/images/cta/item-two.png"
+          alt="cta Item two"
+          width={370}
+          height={370}
+          className="absolute -top-[10%] -right-[5%]"
         />
-        <SvgItems
-          variant="item-three"
-          className="absolute top-[60%] right-[5%] text-[clamp(5rem,17vw,20.7rem)] text-electric-lime-400"
+        <Image
+          src="/images/cta/item-three.png"
+          alt="cta Item three"
+          width={330}
+          height={330}
+          className="absolute bottom-0 right-[5%]"
         />
 
         {/* left */}
-        <SvgItems
-          variant="item-six"
-          className="absolute top-[2%] left-[0%] text-[clamp(6rem,20vw,24.0625rem)] text-electric-lime-400"
+        <Image
+          src="/images/cta/item-seven.png"
+          alt="cta Item seven"
+          width={385}
+          height={385}
+          className="absolute top-0 left-0"
         />
-        <SvgItems
-          variant="item-five"
-          className="absolute top-[50%] left-[15%] text-[clamp(3rem,10vw,10.9375rem)] text-shuttle-gray-100"
+        <Image
+          src="/images/cta/item-six.png"
+          alt="cta Item six"
+          width={175}
+          height={175}
+          className="absolute top-[2%] left-[15%]"
         />
-        <SvgItems
-          variant="item-four"
-          className="absolute top-[70%] left-[5%] text-[clamp(5rem,17vw,21.375rem)] text-shuttle-gray-100"
+        <Image
+          src="/images/cta/item-five.png"
+          alt="cta Item five"
+          width={120}
+          height={120}
+          className="absolute bottom-[10%] left-0"
+        />
+        <Image
+          src="/images/cta/item-four.png"
+          alt="cta Item four"
+          width={342}
+          height={342}
+          className="absolute bottom-0 left-[5%]"
         />
       </div>
 
       {/* Mobile layer */}
       <div className="absolute inset-0 md:hidden">
         {/* right */}
-        <SvgItems
-          variant="item-two"
-          className="absolute top-[6%] -right-[15%] text-[clamp(5rem,32vw,9rem)] text-electric-lime-400"
+        <Image
+          src="/images/cta/item-one.png"
+          alt="cta Item one"
+          width={70}
+          height={70}
+          className="absolute bottom-[2%] right-[20%] z-[-10]"
         />
-        <SvgItems
-          variant="item-one"
-          className="absolute z-20 bottom-[10%] -right-[5%] text-[clamp(3.5rem,22vw,6rem)] text-shuttle-gray-100"
+        <Image
+          src="/images/cta/item-two.png"
+          alt="cta Item two"
+          width={120}
+          height={120}
+          className="absolute top-[10%] -right-10"
         />
         {/* left */}
-        <SvgItems
-          variant="item-six"
-          className="absolute top-[8%] -left-[2%] text-[clamp(4rem,26vw,7rem)] text-shuttle-gray-100"
+        <Image
+          src="/images/cta/item-five.png"
+          alt="cta Item five"
+          width={70}
+          height={70}
+          className="absolute top-[10%] left-0"
         />
-        <SvgItems
-          variant="item-three"
-          className="absolute z-20 -bottom-[5%] -left-[12%] text-[clamp(4rem,28vw,7.5rem)] text-electric-lime-400"
+        <Image
+          src="/images/cta/item-four.png"
+          alt="cta Item four"
+          width={120}
+          height={120}
+          className="absolute bottom-0 left-[5%]"
         />
       </div>
     </div>
