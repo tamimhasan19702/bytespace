@@ -85,11 +85,3 @@ src/
 │
 └── public/images/
 ```
-
-## Conventions
-
-- Route groups own their local UI in `_sub-components/` (inside `app/`); sections and components use plain `sub-components/`.
-- Static content lives in a sibling `data.ts`, typed by a sibling `interface.ts`.
-- Use `cn()` from `@/lib/utils/cn` for merged class names.
-- Colors are CSS custom properties in `globals.css` (`bg-persian-blue-800`, `text-shuttle-gray-600`, …). Never build class names dynamically — Tailwind's scanner can't see them.
-- Animations are inline `useGSAP` with `{ scope: ref }`; no wrapper hooks.
