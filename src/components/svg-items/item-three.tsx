@@ -1,6 +1,6 @@
 import { useId } from "react";
 
-export const ItemNine = ({ className }: { className?: string }) => {
+export const ItemThree = ({ className }: { className?: string }) => {
   const uid = useId();
 
   return (
