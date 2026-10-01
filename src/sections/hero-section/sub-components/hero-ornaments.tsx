@@ -1,10 +1,9 @@
 "use client";
 
-import { SvgItems } from "@/components/svg-items";
 import { gsap, useGSAP } from "@/lib/animations/gsap";
+import Image from "next/image";
 import { useRef } from "react";
 import { Elipse } from "./elipse";
-import { HeroImage } from "./hero-image";
 
 export function HeroOrnaments() {
   const scope = useRef<HTMLDivElement>(null);
@@ -15,7 +14,7 @@ export function HeroOrnaments() {
     () => {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      gsap.from("svg", {
+      gsap.from("img", {
         opacity: 0,
         scale: 0.9,
         duration: 1,
@@ -24,7 +23,7 @@ export function HeroOrnaments() {
         scrollTrigger: { trigger: scope.current, start: "top 85%", once: true },
       });
 
-      gsap.to("svg", {
+      gsap.to("img", {
         y: 20,
         duration: 3,
         ease: "sine.inOut",
@@ -56,61 +55,86 @@ export function HeroOrnaments() {
 
   return (
     <>
-      <div
-        ref={scope}
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10"
-      >
+      <div ref={scope} aria-hidden="true" className="pointer-events-none absolute inset-0 z-10">
         {/* Desktop */}
-        <div className="absolute inset-0 hidden md:block">
+        <div className="absolute inset-0 hidden md:block overflow-hidden">
           {/* right */}
-          <SvgItems
-            variant="item-one"
-            className="absolute top-[50%] right-[10%] text-[clamp(3rem,10vw,11.75rem)] text-shuttle-gray-100"
+          <Image
+            src="/images/hero/item-one.png"
+            alt="Hero Item One"
+            width={188}
+            height={188}
+            className="absolute top-[50%] right-[10%]"
           />
-          <SvgItems
-            variant="item-two"
-            className="absolute top-[10%] -right-[5%] text-[clamp(6rem,20vw,23.1rem)] text-electric-lime-400"
+          <Image
+            src="/images/hero/item-two.png"
+            alt="Hero Item Two"
+            width={370}
+            height={370}
+            className="absolute top-[10%] right-[-5%]"
           />
-          <SvgItems
-            variant="item-three"
-            className="absolute top-[70%] right-[3%] text-[clamp(5rem,17vw,20.7rem)] text-shuttle-gray-100"
+          <Image
+            src="/images/hero/item-three.png"
+            alt="Hero Item Three"
+            width={330}
+            height={330}
+            className="absolute top-[70%] right-[3%]"
           />
-
           {/* left */}
-          <SvgItems
-            variant="item-six"
-            className="absolute top-[25%] left-[0%] text-[clamp(6rem,20vw,24.0625rem)] text-electric-lime-400"
+          <Image
+            src="/images/hero/item-four.png"
+            alt="Hero Item Four"
+            width={385}
+            height={385}
+            className="absolute top-[25%] left-[0%]"
           />
-          <SvgItems
-            variant="item-five"
-            className="absolute top-[50%] left-[15%] text-[clamp(3rem,10vw,10.9375rem)] text-shuttle-gray-100"
+          <Image
+            src="/images/hero/item-five.png"
+            alt="Hero Item Five"
+            width={175}
+            height={175}
+            className="absolute top-[50%] left-[15%]"
           />
-          <SvgItems
-            variant="item-four"
-            className="absolute top-[70%] left-[5%] text-[clamp(5rem,17vw,21.375rem)] text-shuttle-gray-100"
+          <Image
+            src="/images/hero/item-six.png"
+            alt="Hero Item Six"
+            width={342}
+            height={342}
+            className="absolute top-[70%] left-[5%]"
           />
         </div>
 
         {/* Mobile layer */}
         <div className="absolute inset-0 md:hidden">
           {/* right */}
-          <SvgItems
-            variant="item-two"
-            className="absolute top-[6%] -right-[5%] text-[clamp(5rem,32vw,9rem)] text-electric-lime-400"
+          <Image
+            src="/images/hero/item-two.png"
+            alt="Hero Item Two"
+            width={120}
+            height={120}
+            className="absolute top-[6%] right-[-5%]"
           />
-          <SvgItems
-            variant="item-one"
-            className="absolute z-20 bottom-[20%] right-[2%] text-[clamp(3.5rem,22vw,6rem)] text-shuttle-gray-100"
+          <Image
+            src="/images/hero/item-one.png"
+            alt="Hero Item One"
+            width={90}
+            height={90}
+            className="absolute z-20 bottom-[20%] right-[2%]"
           />
           {/* left */}
-          <SvgItems
-            variant="item-six"
-            className="absolute top-[8%] left-[0%] text-[clamp(4rem,26vw,7rem)] text-shuttle-gray-100"
+          <Image
+            src="/images/hero/item-six.png"
+            alt="Hero Item Six"
+            width={130}
+            height={130}
+            className="absolute z-20 bottom-[15%] left-[2%]"
           />
-          <SvgItems
-            variant="item-three"
-            className="absolute z-20 bottom-[15%] left-[2%] text-[clamp(4rem,28vw,7.5rem)] text-electric-lime-400"
+          <Image
+            src="/images/hero/item-three.png"
+            alt="Hero Item Three"
+            width={140}
+            height={140}
+            className="absolute top-[8%] left-[0%]"
           />
         </div>
       </div>
@@ -123,9 +147,31 @@ export function HeroOrnaments() {
       {/* Hero image */}
       <div
         ref={heroImage}
-        className="absolute bottom-0 left-1/2 z-20 w-full max-w-80 -translate-x-1/2 md:w-[50vw] md:max-w-150"
+        className="absolute bottom-0 left-1/2 z-20 aspect-722/515 w-full max-w-80 -translate-x-1/2 sm:max-w-100 md:w-[50vw] md:max-w-120 lg:max-w-140 xl:max-w-160 2xl:max-w-180"
       >
-        <HeroImage className=" text-[300px] sm:text-[400px] md:text-[500px] lg:text-[600px] 2xl:text-[800px]" />
+        <Image src="/images/hero/hero-image.png" alt="Hero Image" fill className="object-contain" />
+
+        <Image
+          src="/images/hero/hero-image-progress.png"
+          alt="Hero Image Progress"
+          width={232}
+          height={131}
+          className="absolute bottom-55 right-[-100] -translate-x-1/2 w-full max-w-58 hidden md:block"
+        />
+        <Image
+          src="/images/hero/hero-image-avatar.png"
+          alt="Hero Image Avatar"
+          width={238}
+          height={121}
+          className="absolute bottom-15 left-15 -translate-x-1/2 w-full max-w-65 hidden md:block"
+        />
+        <Image
+          src="/images/hero/hero-image-title.png"
+          alt="Hero Image Title"
+          width={208}
+          height={70}
+          className="absolute bottom-80 left-20 -translate-x-1/2 w-full max-w-50 hidden md:block"
+        />
       </div>
     </>
   );
